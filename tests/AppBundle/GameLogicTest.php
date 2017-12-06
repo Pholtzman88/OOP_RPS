@@ -34,8 +34,9 @@ class GameLogicTest extends AppTestCase
 
     public function testPlayGame()
     {
-        $userResults = $this->rockPaperScissors->play();
-
+        $userPick = $this->rockPaperScissors->userPick("rock");
+        $computerPick = $this->rockPaperScissors->computerPick();
+        $userResults = $this->rockPaperScissors->play($userPick, $computerPick);
 
         switch($userResults){
             case "win":

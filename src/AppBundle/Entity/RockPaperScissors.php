@@ -36,9 +36,8 @@ class RockPaperScissors
         $this->rules = $rules;
     }
 
-    public function userPick()
+    public function userPick($userChoice)
     {
-        $userChoice = "rock";
         return $this->user->makeSelection($userChoice);
     }
 
@@ -47,10 +46,8 @@ class RockPaperScissors
         return $this->computer->selectOneAtRandom();
     }
 
-    public function play()
+    public function play($userPick, $computerPick)
     {
-        $userPick = $this->userPick();
-        $computerPick = $this->computerPick();
 
         echo "You picked " . $userPick . " and the computer picked " . $computerPick . "...\n";
         return $this->rules->checkScore($userPick, $computerPick);
